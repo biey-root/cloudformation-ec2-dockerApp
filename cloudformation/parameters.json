@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "CinchKey"
+  },
+  {
+    "ParameterKey": "HomeIP",
+    "ParameterValue": "0.0.0.0/0"
+  }
+]

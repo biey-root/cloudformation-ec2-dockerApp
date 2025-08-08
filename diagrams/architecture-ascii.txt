@@ -1,0 +1,26 @@
+AWS VPC: 10.0.0.0/16
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        +-------------------+                               │
+│                        |  Bastion Host     |  (Public Subnet: 10.0.1.0/24) │
+│ Home IP ──SSH──────────>| Amazon Linux 2    |<─── IGW                      │
+│                        | t2.micro          |                               │
+│                        +-------------------+                               │
+│                                |                                           │
+│                                | SSH Tunnel                                │
+│                                v                                           │
+│                        +-------------------+                               │
+│                        |   App EC2         |  (Private Subnet: 10.0.2.0/24)│
+│                        | Amazon Linux 2    |                               │
+│                        | t2.micro + Docker |                               │
+│                        | nginxdemos/hello  |                               │
+│                        +-------------------+                               │
+│                                |                                           │
+│                                | S3 API                                    │
+│                                v                                           │
+│                        +-------------------+                               │
+│                        |   S3 Log Bucket   |                               │
+│                        | Versioning ON     |                               │
+│                        | Public Blocked    |                               │
+│                        +-------------------+                               │
+│                                                                             │
+│ (Optional) NAT Instance: t2.micro, stopped by default, for outbound access   │
