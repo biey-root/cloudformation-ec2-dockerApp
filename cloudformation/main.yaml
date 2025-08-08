@@ -141,7 +141,7 @@ Resources:
   NATInstance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0d8ec96c89ad62005  # Amazon Linux 2 AMI (us-east-1)
+      ImageId: ami-0d8ec96c89ad62005  # Amazon Linux 2 AMI (ap-southeast-1)
       InstanceType: t3.micro
       KeyName: !Ref KeyName
       SubnetId: !Ref PublicSubnet
@@ -191,7 +191,7 @@ Resources:
   BastionHost:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0d8ec96c89ad62005  # Amazon Linux 2 AMI (us-east-1)
+      ImageId: ami-0d8ec96c89ad62005  # Amazon Linux 2 AMI (ap-southeast-1)
       InstanceType: t3.micro
       KeyName: !Ref KeyName
       SubnetId: !Ref PublicSubnet
@@ -275,7 +275,7 @@ Resources:
     Type: AWS::EC2::Instance
     DependsOn: NATInstance
     Properties:
-      ImageId: ami-0d8ec96c89ad62005  # Amazon Linux 2 AMI (us-east-1)
+      ImageId: ami-0d8ec96c89ad62005  # Amazon Linux 2 AMI (ap-southeast-1)
       InstanceType: t3.micro
       KeyName: !Ref KeyName
       SubnetId: !Ref PrivateSubnet
