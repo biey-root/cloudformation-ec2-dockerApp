@@ -1,4 +1,4 @@
-# DevOps Assignment — Cinch Sample
+# DevOps Assignment — Sample
 
 ## Architecture Diagram
 
